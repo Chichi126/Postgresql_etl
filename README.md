@@ -56,15 +56,19 @@ Use Python's requests library to connect and fetch data.
 
 After extracting the data, we'll apply transformations to clean and prepare the data for the database:
 
-## Connect to PostgreSQL
+## Load Transformed Data into PostgreSQL
 
-**Install PostgreSQL and set up a local database.**
+#### Connect to PostgreSQL
 
-**Create a PostgreSQL connection using psycopg2.**
+Install PostgreSQL and set up a local database.**
 
-**Create Fact and Dimension Tables**
+Create a PostgreSQL connection using psycopg2.**
 
-**Load Transformed Data into PostgreSQL**
+Create Fact and Dimension Tables**
+
+
+
+
 
 ## Data Modeling
 
