@@ -1,4 +1,5 @@
 # Developing a Robust ETL Pipeline for Property Records in Real Estate Using PostgreSQL for UrbanNest Realty
+
 ![](pipeline_diagram.jpg)
 
 ## Tools and Methodology
@@ -23,7 +24,7 @@
     
   Select the option to initialize with a README file.**    
   
-   Add a .gitignore for Python to exclude unnecessary files.
+  Add a .gitignore for Python to exclude unnecessary files.
 
 ## Set Up the Project Environment
 
@@ -75,15 +76,17 @@ After extracting the data, we'll apply transformations to clean and prepare the 
 
 ### Schema Design:
 
-  **Location Dimension: Attributes like county, state, zipCode.**
+  Location Dimension: Attributes like county, state, zipCode.**
 
-  **Features Dimension: Attributes like propertyType, zoning, features.**
+  Features Dimension: Attributes like propertyType, zoning, features.**
 
-  **Sales Facts: Sales attributes like lastSalePrice and lastSaleDate.**
+  Sales Facts: Sales attributes like lastSalePrice and lastSaleDate.**
 
-  **Fact Table: Links the dimensions using foreign keys and includes metrics like squareFootage and lotSize**
+  Fact Table: Links the dimensions using foreign keys and includes metrics like squareFootage and lotSize**
+
 
 ![](Zapco_Data_Model.drawio.pdf)
+
 
 ### Push Changes to GitHub
 
@@ -98,11 +101,11 @@ git push origin main
  
  ## Automate the ETL Process
  
-**To automate the ETL process, you can schedule the scripts to run periodically using Windows Task Scheduler (for Windows) or Cron (for Linux/Mac)**
+To automate the ETL process, you can schedule the scripts to run periodically using Windows Task Scheduler (for Windows) or Cron (for Linux/Mac)**
 
 #### For Windows Task Scheduler:
 
-##### Open Task Scheduler.
+#### Open Task Scheduler.
 
 Create a new task, and set the trigger to run the Python ETL scripts at a specified time (e.g., daily).
 
