@@ -13,6 +13,9 @@
   
   - GitHub: For version control and documentation.
 
-  
-
- 
+## Step-by-Step Guide
+  ## Create GitHub Repository
+  **Go to GitHub and create a new repository**:
+    **Choose a repository name (e.g., real-estate-data-pipeline)**.
+    **Select the option to initialize with a README file.**    
+    ** Add a .gitignore for Python to exclude unnecessary files.
