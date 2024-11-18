@@ -116,9 +116,11 @@ def get_db_connection():
         database = 'Zapco_db')
         
         return connection
+        
     except Exception as e:
         print(f"Error connecting to the database: {e}")
-        return None
+        print('database connected succesfully')
+        
     
 
 conn = get_db_connection()
@@ -137,21 +139,6 @@ def create_tables():
         DROP TABLE IF EXISTS zapco_schema.location_dim;
         DROP TABLE IF EXISTS zapco_schema.sales_facts;
         DROP TABLE IF EXISTS zapco_schema.features_dim;
-
-        CREATE TABLE zapco_schema.fact_table (
-            id NUMERIC PRIMARY KEY, 
-            sales_id INT REFERENCES zapco_schema.sales_fact(sales_id) ON DELETE CASCADE,
-            feature_id INT REFERENCES zapco_schema.features_dim(feature_id) ON DELETE CASCADE,
-            location_id INT REFERENCES zapco_schema.location_dim(location_id) ON DELETE CASCADE,
-            bedrooms FLOAT, 
-            squareFootage FLOAT,
-            bathrooms FLOAT, 
-            lotSize FLOAT,
-            lastSalePrice FLOAT,
-            lastSaleDate DATE, 
-            longitude FLOAT, 
-            latitude FLOAT
-        );
 
         CREATE TABLE zapco_schema.location_dim (
             county VARCHAR(300),
@@ -174,6 +161,21 @@ def create_tables():
             lastSaleDate DATE,
             sales_id INT PRIMARY KEY
         );
+
+        CREATE TABLE zapco_schema.fact_table (
+            id NUMERIC PRIMARY KEY, 
+            sales_id INT REFERENCES zapco_schema.sales_facts(sales_id) ON DELETE CASCADE,
+            feature_id INT REFERENCES zapco_schema.features_dim(feature_id) ON DELETE CASCADE,
+            location_id INT REFERENCES zapco_schema.location_dim(location_id) ON DELETE CASCADE,
+            bedrooms FLOAT, 
+            squareFootage FLOAT,
+            bathrooms FLOAT, 
+            lotSize FLOAT,
+            lastSalePrice FLOAT,
+            lastSaleDate DATE, 
+            longitude FLOAT, 
+            latitude FLOAT
+        );
     '''
     
     # Execute query and commit changes
@@ -191,8 +193,6 @@ create_tables()
     
 
 # uploading dataset into the tables created
-
-
 def load_data(csv_path, table_name, fact_columns):
     conn = get_db_connection()
     cursor = conn.cursor()
@@ -216,24 +216,21 @@ def load_data(csv_path, table_name, fact_columns):
     # Close the cursor and connection properly
     cursor.close()
     conn.close()
+# Load data for the features table
+features_csv_path = 'features_dimension.csv'
+load_data(features_csv_path, 'zapco_schema.features_dim', ['features', 'propertyType', 'zoning', 'feature_id'])
 
+# Load data for the location table
+location_csv_path = 'location_dimension.csv'
+load_data(location_csv_path, 'zapco_schema.location_dim', ['county', 'zipCode', 'formattedAddress', 'state', 'city', 'location_id'])
+
+sales_csv_path = 'sales_facts.csv'
+load_data(sales_csv_path, 'zapco_schema.sales_facts',['lastSalePrice','lastSaleDate','sales_id'])
 # Define the columns for the fact table (assuming these match your table schema)
 fact_columns = ['id', 'sales_id', 'feature_id', 'location_id', 'bedrooms', 'squareFootage', 'bathrooms', 'lotSize', 'lastSalePrice', 'lastSaleDate', 'longitude', 'latitude']
 
 # Load data for the fact table
-fact_csv_path = '/Users/apple/Desktop/Postgresql_etl/property_fact.csv'
+fact_csv_path = 'property_fact.csv'
 load_data(fact_csv_path, 'zapco_schema.fact_table', fact_columns)
-
-# Load data for the features table
-features_csv_path = '/Users/apple/Desktop/Postgresql_etl/features_dimension.csv'
-load_data(features_csv_path, 'zapco_schema.features_dim', ['features', 'propertyType', 'zoning', 'feature_id'])
-
-# Load data for the location table
-location_csv_path = '/Users/apple/Desktop/Postgresql_etl/location_dimension.csv'
-load_data(location_csv_path, 'zapco_schema.location_dim', ['county', 'zipCode', 'formattedAddress', 'state', 'city', 'location_id'])
-
-#loading the sales table
-sales_csv_path = '/Users/apple/Desktop/Postgresql_etl/sales_facts.csv'
-load_data(sales_csv_path, 'zapco_schema.sales_facts',['lastSalePrice','lastSaleDate','sales_id'])
 
 print('congratulations Zapco api successfully extracted and loaded')
