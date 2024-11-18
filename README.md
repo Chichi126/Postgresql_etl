@@ -25,6 +25,24 @@
   
    Add a .gitignore for Python to exclude unnecessary files.
 
+## Set Up the Project Environment
+
+**Install required libraries by creating a requirements.txt file:**
+
+bash
+Copy code
+psycopg2
+requests
+pandas
+dash
+plotly
+schedule  # For task automation
+
+#### Install the dependencies:
+
+
+pip install -r requirements.txt
+
 ## Extract Data from RapidAPI
 
 Sign up for RapidAPI, search for a real estate API (e.g., Zillow or Realtor), and subscribe to the API.
