@@ -75,15 +75,16 @@ After extracting the data, we'll apply transformations to clean and prepare the 
 
 ### Schema Design:
 
-##### Location Dimension: Attributes like county, state, zipCode.
+  **Location Dimension: Attributes like county, state, zipCode.**
 
-##### Features Dimension: Attributes like propertyType, zoning, features.
+  **Features Dimension: Attributes like propertyType, zoning, features.**
 
-##### Sales Facts: Sales attributes like lastSalePrice and lastSaleDate.
+  **Sales Facts: Sales attributes like lastSalePrice and lastSaleDate.**
 
-##### Fact Table: Links the dimensions using foreign keys and includes metrics like squareFootage and lotSize
+  **Fact Table: Links the dimensions using foreign keys and includes metrics like squareFootage and lotSize**
 
 ![](Zapco_Data_Model.drawio.pdf)
+
 ### Push Changes to GitHub
 
 Once you have made updates, push your changes to GitHub:
