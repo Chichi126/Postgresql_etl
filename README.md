@@ -116,7 +116,7 @@ type crontab -e in your terminal
 
   **Add the following line to run the ETL task every day at midnight:**
 
-![]([Screenshot 2024-11-18 at 11.23.43 PM.png](https://github.com/Chichi126/Postgresql_etl/blob/0349a1697e5138f98854fa463363e212dd5872e6/Screenshot%202024-11-18%20at%2011.23.43%20PM.png))
+![](Screenshot 2024-11-18 at 11.23.43 PM.png)
 
 
 ## Additional Notes
