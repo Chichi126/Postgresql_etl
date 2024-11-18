@@ -11,7 +11,7 @@ url = "https://realty-mole-property-api.p.rapidapi.com/randomProperties"
 querystring = {"limit":"2000"}
 
 headers = {
-	"x-rapidapi-key": "ce3693686amshd8a81ba62ce435ep1113afjsn137d2b9aa172",
+	"x-rapidapi-key": "your_apikey",
 	"x-rapidapi-host": "realty-mole-property-api.p.rapidapi.com"
 }
 
@@ -217,20 +217,20 @@ def load_data(csv_path, table_name, fact_columns):
     cursor.close()
     conn.close()
 # Load data for the features table
-features_csv_path = 'features_dimension.csv'
+features_csv_path = '/Users/apple/Desktop/Postgresql_etl/data/features_dimension.csv'
 load_data(features_csv_path, 'zapco_schema.features_dim', ['features', 'propertyType', 'zoning', 'feature_id'])
 
 # Load data for the location table
-location_csv_path = 'location_dimension.csv'
+location_csv_path = '/Users/apple/Desktop/Postgresql_etl/data/location_dimension.csv'
 load_data(location_csv_path, 'zapco_schema.location_dim', ['county', 'zipCode', 'formattedAddress', 'state', 'city', 'location_id'])
 
-sales_csv_path = 'sales_facts.csv'
+sales_csv_path = '/Users/apple/Desktop/Postgresql_etl/data/sales_facts.csv'
 load_data(sales_csv_path, 'zapco_schema.sales_facts',['lastSalePrice','lastSaleDate','sales_id'])
 # Define the columns for the fact table (assuming these match your table schema)
 fact_columns = ['id', 'sales_id', 'feature_id', 'location_id', 'bedrooms', 'squareFootage', 'bathrooms', 'lotSize', 'lastSalePrice', 'lastSaleDate', 'longitude', 'latitude']
 
 # Load data for the fact table
-fact_csv_path = 'property_fact.csv'
+fact_csv_path = '/Users/apple/Desktop/Postgresql_etl/data/property_fact.csv'
 load_data(fact_csv_path, 'zapco_schema.fact_table', fact_columns)
 
 print('congratulations Zapco api successfully extracted and loaded')
