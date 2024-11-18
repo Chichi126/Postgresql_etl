@@ -64,6 +64,36 @@ After extracting the data, we'll apply transformations to clean and prepare the 
 **Create Fact and Dimension Tables**
 
 ## Load Transformed Data into PostgreSQL**
+
+## Data Modeling
+
+#### Create a Star Schema:
+
+##### Fact Table: Central table containing metrics like property sales, area, bedrooms, etc.
+
+##### Dimension Tables: Reference tables for location, features, and sales details.
+
+### Schema Design:
+
+##### Location Dimension: Attributes like county, state, zipCode.
+
+##### Features Dimension: Attributes like propertyType, zoning, features.
+
+##### Sales Facts: Sales attributes like lastSalePrice and lastSaleDate.
+
+##### Fact Table: Links the dimensions using foreign keys and includes metrics like squareFootage and lotSize
+
+
+### Push Changes to GitHub
+
+Once you have made updates, push your changes to GitHub:
+
+
+git add .
+
+git commit -m "Initial setup for ETL pipeline and dashboard"
+
+git push origin main
  
  ## Automate the ETL Process
  
