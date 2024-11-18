@@ -83,7 +83,7 @@ After extracting the data, we'll apply transformations to clean and prepare the 
 
 ##### Fact Table: Links the dimensions using foreign keys and includes metrics like squareFootage and lotSize
 
-
+![](Zapco_Data_Model.drawio.pdf)
 ### Push Changes to GitHub
 
 Once you have made updates, push your changes to GitHub:
@@ -116,9 +116,7 @@ type crontab -e in your terminal
 
   **Add the following line to run the ETL task every day at midnight:**
 
-bash
-
-0 0 * * * /usr/bin/python3 /path/to/your/script.py
+![](Screenshot 2024-11-18 at 11.23.43 PM.png)
 
 
 ## Additional Notes
