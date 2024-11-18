@@ -88,7 +88,7 @@ After extracting the data, we'll apply transformations to clean and prepare the 
 ![](Zapco_Data_Model.drawio.pdf)
 
 
-### Push Changes to GitHub
+## Push Changes to GitHub
 
 Once you have made updates, push your changes to GitHub:
 
