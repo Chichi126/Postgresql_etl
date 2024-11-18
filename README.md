@@ -63,7 +63,7 @@ After extracting the data, we'll apply transformations to clean and prepare the 
 
 **Create Fact and Dimension Tables**
 
-## Load Transformed Data into PostgreSQL**
+**Load Transformed Data into PostgreSQL**
 
 ## Data Modeling
 
