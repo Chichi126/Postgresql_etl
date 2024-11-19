@@ -122,9 +122,11 @@ Edit the crontab file to schedule the ETL task:
 
 type crontab -e in your terminal
 
-  **Add the following line to run the ETL task every day at midnight:**
+Add the following line to run the ETL task every day at midnight:
+**0 0 * * * <command-to-run>**
 
-![diagram here](Screenshot 2024-11-18 at 11.23.43 PM.png)
+
+
 
 
 ## Additional Notes
