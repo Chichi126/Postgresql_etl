@@ -125,7 +125,7 @@ type crontab -e in your terminal
 Add the following line to run the ETL task every day at midnight:
 
 
-**0 0 * * * <command-to-run>**
+**0 0 * * * (followed by script path)**
 
 
 
