@@ -89,7 +89,7 @@ Create Fact and Dimension Tables**
   Fact Table: Links the dimensions using foreign keys and includes metrics like squareFootage and lotSize**
 
 
-![](Zapco_Data_Model.drawio.pdf)
+![zapco_DataModel](Zapco_Data_Model.drawio.pdf)
 
 
 ## Push Changes to GitHub
