@@ -46,7 +46,7 @@ pip install -r requirements.txt
 
 ## Extract Data from RapidAPI
 
-Sign up for RapidAPI, search for a real estate API (e.g., Zillow or Realtor), and subscribe to the API.
+Sign up for RapidAPI, search for a Realty Mole Property, and subscribe to the API.
 
 Obtain the API key.
 
@@ -76,21 +76,27 @@ Create Fact and Dimension Tables**
 
 ##### Fact Table: Central table containing metrics like property sales, area, bedrooms, etc.
 
-##### Dimension Tables: Reference tables for location, features, and sales details.
+##### Dimension Tables: Reference tables for location, features, and date details.
 
 ### Schema Design:
 
-  Location Dimension: Attributes like county, state, zipCode.**
+  Location Dimension: Attributes like county, state, zipCode.
 
-  Features Dimension: Attributes like propertyType, zoning, features.**
+  Features Dimension: Attributes like propertyType, zoning, features.
 
-  Sales Facts: Sales attributes like lastSalePrice and lastSaleDate.**
+  Date Dimension: Attributes like year, month, lastSalePrice etc
 
-  Fact Table: Links the dimensions using foreign keys and includes metrics like squareFootage and lotSize**
+  owner Dimension: Attributes like ownerName, OwnerID etc
+
+  Fact Table: Links the dimensions table using their foreign keys
 
 
-![zapco_DataModel](Zapco_Data_Model.drawio.pdf)
+![zapco_DataModel](https://github.com/Chichi126/Postgresql_etl/blob/e9b0556b62cb2e510f31b386ec1f0dc0831ed7ef/Data_model%20(1).jpg)
 
+
+## Dashboard Viz
+
+connect to any of the virtualization tools (Power BI, Tableau etc) to create a simple Dashboard using any metrics of your choice
 
 ## Push Changes to GitHub
 
