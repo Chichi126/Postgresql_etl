@@ -56,7 +56,10 @@ Use Python's requests library to connect and fetch data.
 
 After extracting the data, we'll apply transformations to clean and prepare the data for the database:
 
+
+
 ## Load Transformed Data into PostgreSQL
+
 
 #### Connect to PostgreSQL
 
@@ -67,7 +70,7 @@ Create a PostgreSQL connection using psycopg2.**
 Create Fact and Dimension Tables**
 
 
-
+## Here is the link to see python codes and workings ![here](main.py)
 
 
 ## Data Modeling
@@ -91,12 +94,14 @@ Create Fact and Dimension Tables**
   Fact Table: Links the dimensions table using their foreign keys
 
 
-![zapco_DataModel](https://github.com/Chichi126/Postgresql_etl/blob/e9b0556b62cb2e510f31b386ec1f0dc0831ed7ef/Data_model%20(1).jpg)
+![zapco_DataModel](https://github.com/Chichi126/Postgresql_etl/blob/d463e0532a4efebdd8369e2ed886d13e151541a4/Data_model%20(2).jpg)
+
 
 
 ## Dashboard Viz
 
-connect to any of the virtualization tools (Power BI, Tableau etc) to create a simple Dashboard using any metrics of your choice
+Connect to any of the virtualization tools (Power BI, Tableau etc) to create a simple Dashboard using any metrics of your choice
+
 
 ## Push Changes to GitHub
 
