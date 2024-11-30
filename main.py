@@ -172,7 +172,7 @@ date_dim.to_csv('data/date_dimension.csv', index = False)
 features_dim.to_csv('data/features_dimension.csv', index = False)
 fact_table.to_csv('data/property_fact.csv', index=False)
 
-def get_db_connection() -> Optional[psycopg2.extensions.connection]:
+def get_db_connection():
     """
     Establishes a connection to the PostgreSQL database 'Zapco_db' on localhost:5432.
 
